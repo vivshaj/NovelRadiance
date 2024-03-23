@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovelRadiance</title>
+
+    <!-- Favicon -->
+    <!--<link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3145/3145765.png" type="image/png">-->
+    <link rel="icon" href="./image/favicon_btstrp-site.PNG" type="image/png">
+
+
+    <!-- bootstrap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- CSS Styles -->
+    <style>
+        .flashing-image {
+          transition: opacity 0.5s ease-in-out;
+        }
+    
+        .flashing-image:hover {
+          opacity: 0.7; /* Adjust the opacity value for the desired flashing effect */
+        }
+
+        a  {
+            text-decoration: none;
+        }
+
+        .dropdown-menu ul  {
+          list-style:none;
+          padding:0;
+        }
+        .dropdown-menu.show  {
+          display:flex;
+        }
+
+        .dropdown-menu  ul li a {
+          font-size: 14px;
+          color: #6A6D6D;
+        }
+      </style>
+</head>
+<body   style="font-family: 'Roboto', sans-serif;background-color: antiquewhite;">
+    
+</body>
+</html>
+
+<!-- Navbar -->
+
+<header class="px-3  text-bg-info" style="height:50px;">
+  
+    <div class="container-fluid">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <i class="fa-solid fa-book fa-xl me-1" style="color: #FFD43B;"></i> <span class="fw-bolder fs-4">NovelRadiance</span>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-5 justify-content-center mb-md-0">
+          <li><a href="#top" class="nav-link px-2 text-white">Home</a></li>
+          <li><a href="#browse" class="nav-link px-2 text-white">Browse</a></li>
+          <li><a href="#rank" class="nav-link px-2 text-white">Ranking</a></li>
+          <!--<li><a href="#" class="nav-link px-2 text-white">Create</a></li>-->
+          <li>
+            <div class="dropdown" >
+              <button class="btn text-light dropdown-toggle border-0 p-2" style="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Genre
+              </button>
+              <!--  replacing ul with div -->
+              <div class="dropdown-menu ">
+                <!--<li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Action two</a></li>
+                <li><a class="dropdown-item" href="#">Action three</a></li>-->
+                      <ul>
+                          <li><a class="dropdown-item" href="/genres/action" title="Action">Action</a></li>
+                          <li><a class="dropdown-item" href="/genres/adult" title="Adult">Adult</a></li>
+                          <li><a class="dropdown-item" href="/genres/adventure" title="Adventure">Adventure</a></li>
+                          <li><a class="dropdown-item" href="/genres/anime" title="Anime">Anime</a></li>
+                          <li><a class="dropdown-item" href="/genres/arts" title="Arts">Arts</a></li>
+                          <li><a class="dropdown-item" href="/genres/comedy" title="Comedy">Comedy</a></li>
+                          <li><a class="dropdown-item" href="/genres/drama" title="Drama">Drama</a></li>
+                          <li><a class="dropdown-item" href="/genres/eastern" title="Eastern">Eastern</a></li>
+                          <li><a class="dropdown-item" href="/genres/ecchi" title="Ecchi">Ecchi</a></li>
+                          <li><a class="dropdown-item" href="/genres/fan-fiction" title="Fan-fiction">Fan-fiction</a></li>
+                      </ul> 
+                      <ul>   
+                          <li><a class="dropdown-item" href="/genres/fantasy" title="Fantasy">Fantasy</a></li>
+                          <li><a class="dropdown-item" href="/genres/game" title="Game">Game</a></li>
+                          <li><a class="dropdown-item" href="/genres/gender-bender" title="Gender bender">Gender bender</a></li>
+                          <li><a class="dropdown-item" href="/genres/harem" title="Harem">Harem</a></li>
+                          <li><a class="dropdown-item" href="/genres/historical" title="Historical">Historical</a></li>
+                          <li><a class="dropdown-item" href="/genres/horror" title="Horror">Horror</a></li>
+                          <li><a class="dropdown-item" href="/genres/isekai" title="Isekai">Isekai</a></li>
+                          <li><a class="dropdown-item" href="/genres/josei" title="Josei">Josei</a></li>
+                          <li><a class="dropdown-item" href="/genres/lgbt+" title="Lgbt+">Lgbt+</a></li>
+                          <li><a class="dropdown-item" href="/genres/magic" title="Magic">Magic</a></li>
+                      </ul>    
+                      <ul>
+                          <li><a class="dropdown-item" href="/genres/magical-realism" title="Magical realism">Magical realism</a></li>
+                          <li><a class="dropdown-item" href="/genres/manhua" title="Manhua">Manhua</a></li>
+                          <li><a class="dropdown-item" href="/genres/martial-arts" title="Martial arts">Martial arts</a></li>
+                          <li><a class="dropdown-item" href="/genres/mature" title="Mature">Mature</a></li>
+                          <li><a class="dropdown-item" href="/genres/mecha" title="Mecha">Mecha</a></li>
+                          <li><a class="dropdown-item" href="/genres/military" title="Military">Military</a></li>
+                          <li><a class="dropdown-item" href="/genres/modern-life" title="Modern life">Modern life</a></li>
+                          <li><a class="dropdown-item" href="/genres/movies" title="Movies">Movies</a></li>
+                          <li><a class="dropdown-item" href="/genres/mystery" title="Mystery">Mystery</a></li>
+                          <li><a class="dropdown-item" href="/genres/psychological" title="Psychological">Psychological</a></li>
+                      </ul>
+                      <ul>
+                          <li><a class="dropdown-item" href="/genres/realistic-fiction" title="Realistic fiction">Realistic fiction</a></li>
+                          <li><a class="dropdown-item" href="/genres/reincarnation" title="Reincarnation">Reincarnation</a></li>
+                          <li><a class="dropdown-item" href="/genres/romance" title="Romance">Romance</a></li>
+                          <li><a class="dropdown-item" href="/genres/school-life" title="School life">School life</a></li>
+                          <li><a class="dropdown-item" href="/genres/sci-fi" title="Sci-fi">Sci-fi</a></li>
+                          <li><a class="dropdown-item" href="/genres/seinen" title="Seinen">Seinen</a></li>
+                          <li><a class="dropdown-item" href="/genres/shoujo" title="Shoujo">Shoujo</a></li>
+                          <li><a class="dropdown-item" href="/genres/shoujo-ai" title="Shoujo ai">Shoujo ai</a></li>
+                          <li><a class="dropdown-item" href="/genres/shounen" title="Shounen">Shounen</a></li>
+                          <li><a class="dropdown-item" href="/genres/shounen-ai" title="Shounen ai">Shounen ai</a></li>
+                      </ul>
+                      <ul>    
+                          <li><a class="dropdown-item" href="/genres/slice-of-life" title="Slice of life">Slice of life</a></li>
+                          <li><a class="dropdown-item" href="/genres/smut" title="Smut">Smut</a></li>
+                          <li><a class="dropdown-item" href="/genres/sports" title="Sports">Sports</a></li>
+                          <li><a class="dropdown-item" href="/genres/supernatural" title="Supernatural">Supernatural</a></li>
+                          <li><a class="dropdown-item" href="/genres/system" title="System">System</a></li>
+                          <li><a class="dropdown-item" href="/genres/tragedy" title="Tragedy">Tragedy</a></li>
+                          <li><a class="dropdown-item" href="/genres/urban-life" title="Urban life">Urban life</a></li>
+                          <li><a class="dropdown-item" href="/genres/video-games" title="Video games">Video games</a></li>
+                          <li><a class="dropdown-item" href="/genres/war" title="War">War</a></li>
+                          <li><a class="dropdown-item" href="/genres/wuxia" title="Wuxia">Wuxia</a></li>
+                      </ul> 
+                      <ul>   
+                          <li><a class="dropdown-item" href="/genres/xianxia" title="Xianxia">Xianxia</a></li>
+                          <li><a class="dropdown-item" href="/genres/xuanhuan" title="Xuanhuan">Xuanhuan</a></li>
+                          <li><a class="dropdown-item" href="/genres/yaoi" title="Yaoi">Yaoi</a></li>
+                          <li><a class="dropdown-item" href="/genres/yuri" title="Yuri">Yuri</a></li>
+                      </ul>
+                </div>
+            </div>
+          </li>
+          <li><a href="#contact" class="nav-link px-2 text-white">Contact</a></li>
+        </ul>
+
+        <form class="col-12 col-md-auto mb-3 my-md-2 me-md-3" role="search">
+          <input type="search" class="form-control py-1 form-control-dark text-bg-light" placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light btn-sm  me-2">Login</button>
+          <button type="button" class="btn btn-warning btn-sm ">Sign-up</button>
+        </div>
+      </div>
+    </div>
+  </header>
+<!-- Banner -->
+<section id="banner">
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <!--<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+    </div>
+    <div class="carousel-inner position-relative">
+      <div class="carousel-item active">
+        <img src="https://cdn.pixabay.com/photo/2016/03/27/19/32/book-1283865_1280.jpg" class="d-block w-100" alt="..." style="height:500px;">
+        <div class="carousel-caption d-none d-md-block position-absolute" >
+          <p class=" fs-4 text-light">Embark on a Literary Journey with <span class="fw-bolder text-warning">NovelRadiance</span></p>
+        </div>
+      </div>
+      <div class="carousel-item position-relative">
+        <!--<img src="./image/banner_lightnovel.PNG" class="d-block w-100" alt="..." style="height:500px;">-->
+        <img src="./image/banner_lightnovel1.PNG" class="d-block w-100" alt="..." style="height:500px;">
+        <div class="head-content m-5 position-absolute text-light" style="top:15%;left:10%;right:10%;bottom:10%">
+            <h1 class="fs-2">Read Light Novel &amp; Web Novel Translations Online For FREE!</h1>
+            <h2 class="fs-5 fst-italic">Your fictional stories hub</h2>
+            <div class="description">
+            <p>Looking for a great place to read Light Novels?</p><br>
+            <p class="text-justify">Dive into captivating worlds, unravel thrilling adventures, and fall in love with the magic of storytelling. <span class="text-warning fst-italic fw-bold">NovelRadiance</span> is your gateway to a realm of light novels, where every page holds the promise of exciting narratives and enchanting illustrations. Join our community of avid readers and let the pages come alive! Immerse yourself in the captivating universe of light novels, where every chapter is a new adventure waiting to be discovered. Start your reading escapade now!</p>
+            </div>
+        </div>
+    
+      </div>
+      <!--
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="..." style="height:500px;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>-->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+</section>
+<!-- Content -->
+<section id="browse">
+    <!--ongoing releases -->
+    <div class="cont bg-light m-5 p-4" style="padding-left:43px !important;padding-right:43px !important;padding-top:43px !important;">
+        <div class="con  d-flex justify-content-between align-items-center mb-3 ">
+                    <h1 class="fs-4 m-0  ">New Ongoing Release</h1>
+                    <a href="#" class="text-decoration-none  fw-bold">View more</a>
+        </div>
+          <!-- justify-content-center , p-5 ,ms-3 ongoing ,me-4 - view -->
+        <div class="conten d-flex flex-wrap gap-4  py-4  border-top border-2" >               
+          <div class="card" style="width: 17rem;">
+            <img src="./image/MG_returns.PNG" class="flashing-image card-img-top" alt="..." style="width:100%;height:250px;">
+            <div class="card-body p-0">
+              <h5 class="card-title fs-6 py-2 ps-2 m-0 fw-bold">The Martial God who Regressed Back to Level 2</h5>
+              <div class="novel-stats ps-2" style="font-size: 14px;color: #6A6D6D;">
+                <span class="uppercase"><i class="fa-solid fa-trophy"></i> Rank 27</span><br>
+                <span><i class="icon-book-open"></i> 229 Chapters</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-sm px-2 m-2 fw-bold" style="font-size: 13px;">Read</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 17rem;">
+            <img src="./image/Return of iron blooded SH.PNG" class="flashing-image card-img-top" alt="..." style="width:100%;height:250px;">
+            <div class="card-body p-0">
+              <h5 class="card-title fs-6 py-2 ps-2 m-0 fw-bold">The Return of the Iron-blood Sword Hound</h5>
+              <div class="novel-stats ps-2" style="font-size: 14px;color: #6A6D6D;">
+                <span class="uppercase"><i class="fa-solid fa-trophy"></i> Rank 82</span><br>
+                <span><i class="icon-book-open"></i> 276 Chapters</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-sm px-2 m-2 fw-bold" style="font-size: 13px;">Read</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 17rem;">
+            <img src="./image/01655-i-was-mistaken-as-a-monstrous-genius-actor.jpg" class="flashing-image card-img-top" alt="..." style="width:100%;height:250px;">
+            <div class="card-body p-0">
+              <h5 class="card-title fs-6 py-2 ps-2 m-0 fw-bold">I Was Mistaken as a Monstrous Genius Actor</h5>
+              <div class="novel-stats ps-2" style="font-size: 14px;color: #6A6D6D;">
+                <span class="uppercase"><i class="fa-solid fa-trophy"></i> Rank 35</span><br>
+                <span><i class="icon-book-open"></i> 115 Chapters</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-sm px-2 m-2 fw-bold" style="font-size: 13px;">Read</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 17rem;">
+            <img src="./image/01654-academys-genius-swordmaster.jpg" class="flashing-image card-img-top" alt="..." style="width:100%;height:250px;">
+            <div class="card-body p-0">
+              <h5 class="card-title fs-6 py-2 ps-2 m-0 fw-bold">Academy’s Genius Swordmaster</h5>
+              <div class="novel-stats ps-2" style="font-size: 14px;color: #6A6D6D;">
+                <span class="uppercase"><i class="fa-solid fa-trophy"></i> Rank 141</span><br>
+                <span><i class="icon-book-open"></i> 158 Chapters</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-sm px-2 m-2 fw-bold" style="font-size: 13px;">Read</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 17rem;">
+            <img src="./image/01653-transcendence-due-to-a-system-error.jpg" class="flashing-image card-img-top" alt="..." style="width:100%;height:250px;">
+            <div class="card-body p-0">
+              <h5 class="card-title fs-6 py-2 ps-2 m-0 fw-bold">Transcendence Due To A System Error</h5>
+              <div class="novel-stats ps-2" style="font-size: 14px;color: #6A6D6D;">
+                <span class="uppercase"><i class="fa-solid fa-trophy"></i> Rank 64</span><br>
+                <span><i class="icon-book-open"></i> 156 Chapters</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-sm px-2 m-2 fw-bold" style="font-size: 13px;">Read</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 17rem;">
+            <img src="./image/01652-naruto-the-wind-calamity.jpg" class="flashing-image card-img-top" alt="..." style="width:100%;height:250px;">
+            <div class="card-body p-0">
+              <h5 class="card-title fs-6 py-2 ps-2 m-0 fw-bold">Naruto: The Wind Calamity</h5>
+              <div class="novel-stats ps-2" style="font-size: 14px;color: #6A6D6D;">
+                <span class="uppercase"><i class="fa-solid fa-trophy"></i> Rank 8</span><br>
+                <span><i class="icon-book-open"></i> 460 Chapters</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-sm px-2 m-2 fw-bold" style="font-size: 13px;">Read</a>
+            </div>
+          </div>
+          
+          <div class="card" style="width: 17rem;">
+            <img src="./image/01651-dark-magus-returns.jpg" class="flashing-image card-img-top" alt="..." style="width:100%;height:250px;">
+            <div class="card-body p-0">
+              <h5 class="card-title fs-6 py-2 ps-2 m-0 fw-bold">Dark Magus Returns</h5>
+              <div class="novel-stats ps-2" style="font-size: 14px;color: #6A6D6D;">
+                <span class="uppercase"><i class="fa-solid fa-trophy"></i> Rank 157</span><br>
+                <span><i class="icon-book-open"></i> 333 Chapters</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-sm px-2 m-2 fw-bold" style="font-size: 13px;">Read</a>
+            </div>
+          </div>
+          
+          <div class="card" style="width: 17rem;">
+            <img src="./image/01650-magics-return-i-can-see-the-spirits.jpg" class="flashing-image card-img-top" alt="..." style="width:100%;height:250px;">
+            <div class="card-body p-0">
+              <h5 class="card-title fs-6 py-2 ps-2 m-0 fw-bold">Magic's Return: I Can See The Spirits</h5>
+              <div class="novel-stats ps-2" style="font-size: 14px;color: #6A6D6D;">
+                <span class="uppercase"><i class="fa-solid fa-trophy"></i> Rank 36</span><br>
+                <span><i class="icon-book-open"></i> 216 Chapters</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-sm px-2 m-2 fw-bold" style="font-size: 13px;">Read</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+<section id="rank">
+    <!-- Ranking -->
+    <div class="cont bg-light m-5 p-4 d-flex-flex-column" style="padding-left:43px !important;padding-right:43px !important;padding-top:43px !important;">
+        <div class="con  d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom border-2">
+                    <h1 class="fs-4 m-0">Ranking</h1>
+                    <a href="#" class="text-decoration-none  fw-bold">View more</a>
+        </div>
+        <div class="container-fluid  mt-3 ">
+            <div class="row d-flex justify-content-start">
+                <div class="col-4 d-flex flex-column align-items-start gap-3 p-0">
+                    <span class="w-50 text-center text-light py-2" style="background-color: blueviolet;">Most Read</span>
+
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded  rounded-2"  src="./image/shadow_slave.PNG" alt="Shadow Slave" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row  fs-6 m-0">Shadow Slave</h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-eye"></i>&nbsp; 3.49M (Monthly)</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-bookmark"></i>&nbsp; 28.4K</span>
+                            </div>
+
+                        </li>
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/lord-of-the-mysteries.jpg" alt="Lord of the Mysteries (Web Novel)" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Lord of the Mysteries (Web Novel)</h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-eye"></i>&nbsp; 1.42M (Monthly)</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-bookmark"></i>&nbsp; 27.1K</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/arcane-academy-the-divine-extraction-legacy.jpg" alt="Arcane Academy: The Divine Extraction Legacy" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Arcane Academy: The Divine Extraction Legacy
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-eye"></i>&nbsp; 1.29M (Monthly)</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-bookmark"></i>&nbsp; 5.79K</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/reverend-insanity.jpg" alt="Reverend Insanity" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Reverend Insanity
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-eye"></i>&nbsp; 1.01M (Monthly)</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-bookmark"></i>&nbsp; 17.8K</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/sword-god-in-a-world-of-magic.jpg" alt="Sword God in a World of Magic" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Sword God in a World of Magic
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-eye"></i>&nbsp; 914K (Monthly)</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-bookmark"></i>&nbsp; 14.5K</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/supreme-harem-god-system.jpg" alt="Supreme Harem God System" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Supreme Harem God System
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-eye"></i>&nbsp; 839K (Monthly)</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-bookmark"></i>&nbsp; 8.94K</span>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-4 d-flex flex-column align-items-start gap-3">
+                    <span class="w-50 text-center text-light py-2" style="background-color: blueviolet;">New Trends</span>
+
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/florida-mans-general-store-in-cultivation-world.jpg" alt="Florida Man's General Store in Cultivation World" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Florida Man's General Store in Cultivation World
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-comment"></i>&nbsp; 638 Comments</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-check"></i>&nbsp; 68 Reviews</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/kill-the-sun.jpg" alt="Kill the Sun" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Kill the Sun
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-comment"></i>&nbsp; 997 Comments</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-check"></i>&nbsp; 55 Reviews</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/ill-surpass-the-mc.jpg" alt="I'll Surpass The MC" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">I'll Surpass The MC
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-comment"></i>&nbsp; 675 Comments</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-check"></i>&nbsp; 50 Reviews</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="./image/01652-naruto-the-wind-calamity.jpg" alt="Naruto: The Wind Calamity" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Naruto: The Wind Calamity
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-comment"></i>&nbsp; 553 Comments</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-check"></i>&nbsp; 49 Reviews</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="./image/01650-magics-return-i-can-see-the-spirits.jpg" alt="Magic's Return: I Can See The Spirits" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Magic's Return: I Can See The Spirits
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-comment"></i>&nbsp; 332 Comments</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-check"></i>&nbsp; 45 Reviews</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/arcane-academy-the-divine-extraction-legacy.jpg" alt="Arcane Academy: The Divine Extraction Legacy" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Arcane Academy: The Divine Extraction Legacy
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-regular fa-comment"></i>&nbsp; 733 Comments</span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-check"></i>&nbsp; 44 Reviews</span>
+                            </div>
+                        </li>
+                   
+                    </ul>
+
+                </div>
+                <div class="col-4 d-flex flex-column align-items-start gap-3 pe-0">
+                    <span class="w-50 text-center text-light py-2" style="background-color: blueviolet;">User Rated </span>
+
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/trash-of-the-counts-family.jpg" alt="Trash of the Count's Family (Web Novel)" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Trash of the Count's Family (Web Novel)
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;">
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star-half-stroke" style="color: #FFD43B;"></i>
+                                 &nbsp;4.9
+                               </span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-pencil"></i>&nbsp; 770 Reviews</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/lord-of-the-mysteries.jpg" alt="Lord of the Mysteries (Web Novel)" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Lord of the Mysteries (Web Novel)
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;">
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star-half-stroke" style="color: #FFD43B;"></i>
+                                 &nbsp;4.9
+                               </span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-pencil"></i>&nbsp; 574 Reviews</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/omniscient-readers-viewpoint.jpg" alt="Omniscient Reader’s Viewpoint (Web Novel KR)" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Omniscient Reader’s Viewpoint (Web Novel KR)
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;">
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star-half-stroke" style="color: #FFD43B;"></i>
+                                 &nbsp;4.9
+                               </span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-pencil"></i>&nbsp; 489 Reviews</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/under-the-oak-tree.jpg" alt="Under the Oak Tree (Web Novel KR)" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Under the Oak Tree (Web Novel KR)
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;">
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star-half-stroke" style="color: #FFD43B;"></i>
+                                 &nbsp;4.9
+                               </span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-pencil"></i>&nbsp; 214 Reviews</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/mother-of-learning.jpg" alt="Mother of Learning" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">Mother of Learning
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;">
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star-half-stroke" style="color: #FFD43B;"></i>
+                                 &nbsp;4.9
+                               </span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-pencil"></i>&nbsp; 188 Reviews</span>
+                            </div>
+                        </li>
+
+                        <li class="novel-item d-flex gap-3">
+                            <img class=" ls-is-cached lazyloaded rounded-2"  src="https://fastnovel.org/media/novel/sssclass-suicide-hunter.jpg" alt="SSS-Class Suicide Hunter" style="width:70px;height:90px;">
+                            <div class="item-body d-flex flex-column w-100" style="gap:5px;">
+                               <h4 class="novel-title text1row fs-6 m-0">SSS-Class Suicide Hunter
+                               </h4>
+                               <span style="font-size: 14px;color: #6A6D6D;">
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star-half-stroke" style="color: #FFD43B;"></i>
+                                 &nbsp;4.8
+                               </span>
+                               <span style="font-size: 14px;color: #6A6D6D;"><i class="fa-solid fa-pencil"></i>&nbsp; 162 Reviews</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Contact -->
+<section id="contact" class="d-flex justify-content-center align-items-center">
+
+  <div class="contain w-100 form-control bg-dark border-1 mx-5 mb-5" >
+    <h1 class="text-center mb-4 mt-2 fw-bold"  style="color: blueviolet;">Connect with us</h1>
+    <input type="text" id="name" class="form-control bg-light" placeholder="enter your name"><br>
+    <input type="email" id="mail" class="form-control bg-light" placeholder="enter your mail" ><br>
+    <textarea class="bg-light w-100 form-control mb-4" name="message" id=""  rows="8" placeholder="Message"></textarea>
+
+    <button class="form-control btn btn-md btn-success button fw-bolder text-light text-center">Submit</button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-light">
+  <!-- Grid container -->
+  <div class="container p-3 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-2">
+      <!-- Facebook -->
+      <a data-mdb-ripple-init="" class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+      <!-- Twitter -->
+      <a data-mdb-ripple-init="" class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+      <!-- Google -->
+      <a data-mdb-ripple-init="" class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+      <!-- Instagram -->
+      <a data-mdb-ripple-init="" class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+      <!-- Linkedin -->
+      <a data-mdb-ripple-init="" class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+      <!-- Github -->
+      <a data-mdb-ripple-init="" class="btn text-white btn-floating m-1" style="background-color: #333333;" href="#!" role="button"><i class="fab fa-github"></i></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright: <a href="./index.html" style="color: white;">NovelRadiance.com</a>
+    <!--<a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>-->
+  </div>
+  <!-- Copyright -->
+</footer>
